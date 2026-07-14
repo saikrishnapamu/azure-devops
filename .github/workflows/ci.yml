@@ -71,7 +71,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-       - name: Scan Docker Image
+      - name: Scan Docker Image
          uses: aquasecurity/trivy-action@0.28.0
          with:
            image-ref: ${{ secrets.DOCKER_USERNAME }}/customer-service:${{ github.sha }}
