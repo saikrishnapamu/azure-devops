@@ -67,5 +67,4 @@ jobs:
 
       - name: Push Docker images
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/
-          customer-service:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/customer-service:latest
