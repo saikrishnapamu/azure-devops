@@ -8,3 +8,5 @@ dist/
 build/
 *.log
 coverage/
+venv/
+.venv/
