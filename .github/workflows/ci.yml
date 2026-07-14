@@ -2,10 +2,10 @@ name: Customer Service CI
 
 on:
   push:
-    branches: [main]
+    branches: [azure-devops-proj]
 
   pull_request:
-    branches: [main]
+    branches: [azure-devops-proj]
 
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
       - name: Install Dependecies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirement.txt
+          pip install -r requirements.txt
 
       - name: Verify Flask Installation
         run: |
