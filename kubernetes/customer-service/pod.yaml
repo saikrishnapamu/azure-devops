@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: customer-service
+
+spec:
+  containers:
+    - name: customer-service
+      image: customer-service:v1.0.1
+
+      imagePullPolicy: Never
+
+      ports:
+        - containerPort: 5000

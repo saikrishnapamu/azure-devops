@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+
+metadata:
+  name: database-backup
+  namespace: dev
+
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+
+      containers:
+        - name: backup
+          image: busybox
+          command:
+            - /bin/sh
+            - -c
+            - |
+              echo "Starting Backup...."
+              sleep 10
+              echo "Backup Completed."
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "128Mi"

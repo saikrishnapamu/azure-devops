@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: StatefulSet
+
+metadata:
+  name: postgres
+  namespace: dev
+
+
+spec:
+
+  serviceName: postgres
+
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: postgres
+
+  template:
+
+    metadata:
+      labels:
+        app: postgres
+
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:17
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+
+          ports:
+            - containerPort: 5432
+
+          env:
+            - name: POSTGRES_PASSWORD
+              value: Admin@123
