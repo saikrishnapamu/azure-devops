@@ -62,8 +62,8 @@ jobs:
       - name: Build and Push Docker images
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: Dockerfile
+          context: ./application/customer-service
+          file: ./application/customer-service/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/customer-service:latest
