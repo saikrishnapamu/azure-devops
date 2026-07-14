@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     return {
         "service": "customer-service",
-        "status": "running"
+        "status": "running "
     }
 
 @app.route("/health")
