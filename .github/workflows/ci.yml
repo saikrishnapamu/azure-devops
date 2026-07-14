@@ -3,6 +3,7 @@ name: Customer Service CI
 on:
   push:
     branches: [azure-devops-proj]
+    tags: ["v*"]
 
   pull_request:
     branches: [azure-devops-proj]
@@ -68,6 +69,7 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/customer-service:latest
             ${{ secrets.DOCKER_USERNAME }}/customer-service:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/customer-service:${{ github.ref_name}}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
