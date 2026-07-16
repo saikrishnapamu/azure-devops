@@ -4,7 +4,6 @@ kind: Deployment
 
 metadata:
   name: customer-service
-  namespace: dev
 
 spec:
   replicas: {{ .Values.replicaCount }}
